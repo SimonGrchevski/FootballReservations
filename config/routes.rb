@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'calendars#index'
+  get 'date/:date', to: 'calendars#show'
+  post 'date/:date', to: 'calendars#create'
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
