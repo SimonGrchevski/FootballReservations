@@ -1,6 +1,10 @@
 <h1> Calendars</h1>
-<%= month_calendar do |date| %>
+<%= week_calendar do |date| %>
+<%if Date.current.to_s <= date.to_s  %>
   <%link_to "date/#{date}" do %>
     <%= date %>
+  <%end %>
+<% else %>
+  <%= date %>
   <%end%>
 <% end %>

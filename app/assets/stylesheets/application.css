@@ -15,3 +15,5 @@
  */
 
  @import "simple_calendar";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
