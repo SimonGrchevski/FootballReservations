@@ -1,4 +1,4 @@
 class Calendar < ApplicationRecord
-  has_many :reservations
-  has_many :users, through: :reservations
+  has_one :reservation
+  has_one :user, through: :reservation
 end

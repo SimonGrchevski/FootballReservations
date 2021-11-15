@@ -18,10 +18,6 @@ class CalendarsController < ApplicationController
     end
   end
 
-  def destroy
-
-  end  
-
   def calendar_params 
     params.permit(:date,:start_time,:end_time)
   end

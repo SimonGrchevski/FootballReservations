@@ -1,14 +1,22 @@
 <h1><%= @date %></h1>
 <% while @open <= @close do %>
-  
-    <div><%="#{@open}-#{@open+3600}"%>
-  <% if not_reserved? @date, @open.strftime("%H:%M")%>
-    <%= form_with do |f| %>
-      <%= f.hidden_field  :start_time, value:@open.strftime("%H:%M")%>
-      <%= f.hidden_field  :end_time, value:(@open+3600).strftime("%H:%M")%>
-      <%= f.submit "Reserve" %>
+  <div>
+    <%="#{@open}-#{@open+3600}"%>
+    <% if not_reserved? @date, @open.strftime("%H:%M")%>
+      <%= form_with do |f| %>
+        <%= f.hidden_field  :start_time, value:@open.strftime("%H:%M")%>
+        <%= f.hidden_field  :end_time, value:(@open+3600).strftime("%H:%M")%>
+        <%= f.submit "Reserve" %>
+      <% end %>
+    <% else %>
+      <%@calendar = Calendar.find_by("date = ? AND start_time = ?",
+          @date, @open.strftime("%H:%M")) %>
+          <%= @calendar.user.email %>
+        <% if can? :delete, Calendar, user:current_user %>  
+          
+          <%# <%= link_to 'delete', "date/:date/:delete_calendar/#{@calendar.reservation.id}", method: :delete%>  %>
+        <% end %>
     <% end %>
-  <% end %>
-    </div>
+  </div>
     <%@open+= 3600%>
 <% end %>
