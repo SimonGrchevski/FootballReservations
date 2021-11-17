@@ -3,10 +3,11 @@ class CalendarsController < ApplicationController
   end
 
   def show
-    @date = params[:date]
+    @date = params[:date][3..]
     @open = Tod::TimeOfDay.new 8
     @close = Tod::TimeOfDay.new 21
     @current = @open
+    @day = params[:date][0..2]
   end
 
   def create
@@ -19,6 +20,6 @@ class CalendarsController < ApplicationController
   end
 
   def calendar_params 
-    params.permit(:date,:start_time,:end_time)
+    params.permit(:date,:start_time,:end_time, :day)
   end
 end

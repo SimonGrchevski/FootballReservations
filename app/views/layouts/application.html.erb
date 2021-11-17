@@ -12,9 +12,16 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= link_to 'Log out', destroy_user_session_path, method: :delete%>
+    <% if notice || alert %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+    <br>
+    <br>
+    <nav>
+      <%= link_to 'Log out', destroy_user_session_path, method: :delete%>
+      <%= link_to 'My account', current_user %>
+    </nav>
     <%= yield %>
   </body>
 </html>
