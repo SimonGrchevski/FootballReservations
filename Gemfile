@@ -23,6 +23,7 @@ gem 'cancancan', '~> 3.3'
 gem "simple_calendar", "~> 2.4"
 gem 'tod', '~> 3.0'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'bullet', '~> 6.1', '>= 6.1.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
