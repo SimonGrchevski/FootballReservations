@@ -1,7 +1,7 @@
 <h1> Calendars</h1>
 <%= week_calendar do |date| %>
 <%if Date.current.to_s <= date.to_s  %>
-  <%link_to "date/#{day(date)}#{date}" do %>
+  <%link_to calendar_path("#{day(date)}#{date}") do %>
     <%= date %>
   <%end %>
 <% else %>

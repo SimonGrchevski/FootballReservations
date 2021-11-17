@@ -3,19 +3,18 @@
   <div class="d-flex w-30 bg-danger flex-wrap p-1 my-2">
     <div class="w-50 text-center"><%="#{@open}-#{@open+3600}"%></div>
     <% if not_reserved? @date, @open.strftime("%H:%M")%>
-      <%= form_with do |f| %>
-        <%= f.hidden_field  :start_time, value:@open.strftime("%H:%M")%>
-        <%= f.hidden_field  :end_time, value:(@open+3600).strftime("%H:%M")%>
-        <%= f.hidden_field  :day, value: @day %>
-        <%= f.submit "Reserve" %>
-      <% end %>
+
+      <%= render 'reserve_form',
+      date: @date, day: @day, start_time:@open.strftime("%H:%M"),
+      end_time:(@open+3600).strftime("%H:%M")  %>
+      
     <% else %>
-      <% if can? :delete, Calendar, user:current_user %>
       <%@calendar = find @date, @open.strftime("%H:%M") %>
-        <div class="w-50">
-          <%= link_to 'Cancel reservation', reservation_path(@calendar.reservation.id),class:'btn btn-primary', method: :delete%>
-        </div>
-      <% end %>
+      <% if can? :delete, Calendar, user:current_user %>
+          <div class="w-50">
+            <%= link_to 'Cancel reservation', reservation_path(@calendar.reservation.id),class:'btn btn-primary', method: :delete%>
+          </div>
+        <% end %>
       <div>   
         <%= @calendar.user.email %>
       </div>
