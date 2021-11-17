@@ -1,4 +1,4 @@
 class Reservation < ApplicationRecord
   belongs_to :user
-  belongs_to :calendar, :dependent => :destroy
+  belongs_to :calendar
 end
