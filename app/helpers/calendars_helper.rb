@@ -14,4 +14,8 @@ module CalendarsHelper
   def day(date)
     date.inspect[0..2].to_s
   end
+
+  def to_h(time)
+    time.strftime("%H:%M")
+  end
 end

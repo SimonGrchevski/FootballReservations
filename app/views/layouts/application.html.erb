@@ -18,10 +18,7 @@
     <% end %>
     <br>
     <br>
-    <nav>
-      <%= link_to 'Log out', destroy_user_session_path, method: :delete%>
-      <%= link_to 'My account', current_user %>
-    </nav>
+    <%= render 'layouts/header' %>
     <%= yield %>
   </body>
 </html>

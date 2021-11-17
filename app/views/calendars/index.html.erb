@@ -8,3 +8,8 @@
   <%= date %>
   <%end%>
 <% end %>
+<%if user_signed_in? %>
+  <h1>In</h1>
+<% else %>
+  <h1>Out</h1>
+<% end %>
