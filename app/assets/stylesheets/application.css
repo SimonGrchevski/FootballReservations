@@ -18,6 +18,10 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ .profiler-results {
+   display: none;
+ }
+
  .wrapper {
   background-image: url("ba.jpg");
   background-repeat: no-repeat;
@@ -33,7 +37,8 @@
   top: 0;
   width:  100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.705);
+  background-color: rgba(0, 0, 0, 0.603);
+  pointer-events: none;
 }
 
 .nav {
@@ -55,4 +60,15 @@
   background-color: rgba(128, 255, 0, 0.466);
   padding: 1rem;
   box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0.548);
+}
+
+.options {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.options option {
+  background-color: rgba(0, 0, 0, 0.603);
+  font-size: 1.3rem;
 }
