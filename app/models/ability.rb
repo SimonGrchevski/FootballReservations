@@ -1,15 +1,13 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-      user ||= User.new
-      if user.role.eql? 'Admin'
-        can :manage, :all
-      else
-        can :read, :all
-      end
+    user ||= User.new
+    if user.role.eql? 'Admin'
+      can :manage, :all
+    else
+      can :read, :all
+    end
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

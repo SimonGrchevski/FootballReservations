@@ -14,15 +14,15 @@
  *= require_self
  */
 
- @import "simple_calendar";
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "simple_calendar";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- .profiler-results {
-   display: none;
- }
+.profiler-results {
+  display: none;
+}
 
- .wrapper {
+.wrapper {
   background-image: url("ba.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,7 +35,7 @@
   content: '';
   position: absolute;
   top: 0;
-  width:  100vw;
+  width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.603);
   pointer-events: none;

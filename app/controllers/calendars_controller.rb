@@ -1,6 +1,5 @@
 class CalendarsController < ApplicationController
-  def index
-  end
+  def index; end
 
   def show
     @date = params[:date][3..]
@@ -11,15 +10,15 @@ class CalendarsController < ApplicationController
   end
 
   def create
-    @calendar= Calendar.create(calendar_params)
-    @res = Reservation.create(calendar_id: @calendar.id, user_id: current_user.id )
+    @calendar = Calendar.create(calendar_params)
+    @res = Reservation.create(calendar_id: @calendar.id, user_id: current_user.id)
     if @res.save && @calendar.save
-      flash[:notice] = "Reserved"
+      flash[:notice] = 'Reserved'
       redirect_to request.referrer
     end
   end
 
-  def calendar_params 
-    params.permit(:date,:start_time,:end_time, :day)
+  def calendar_params
+    params.permit(:date, :start_time, :end_time, :day)
   end
 end

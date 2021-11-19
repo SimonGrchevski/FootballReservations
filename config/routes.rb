@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     member do
       get :edit_name
       get :edit_password
+      get :edit_email
     end
   end
 end

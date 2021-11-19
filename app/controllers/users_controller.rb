@@ -5,19 +5,11 @@ class UsersController < ApplicationController
     @calendars = current_user.calendars.includes([:reservation])
   end
 
-  def edit_name
+  def edit_name; end
 
-  end
+  def edit_password; end
 
-  def edit_password
+  def edit_email; end
 
-  end
-
-  def edit_email
-    
-  end
-
-  def update
-
-  end
+  def update; end
 end

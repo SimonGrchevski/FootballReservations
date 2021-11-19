@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     @calendar = Calendar.find(@reservation.calendar_id)
     @calendar.destroy
-    flash[:notice] = "Reservation Canceled"
+    flash[:notice] = 'Reservation Canceled'
     redirect_to request.referrer
   end
 end

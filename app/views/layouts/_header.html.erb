@@ -23,20 +23,8 @@
             <option value="<%=edit_name_user_path(current_user)%>">Edit name</option>
             <option value="<%=edit_password_user_path(current_user)%>">Edit password</option>
             <option value="<%=edit_email_user_path(current_user)%>">Edit email</option>
-        </select>
+          </select>
         </li>
-        
-
-        
-
-
-        <script>
-              document.querySelector(".FU").addEventListener('click', () => {
-                console.log("Works");
-              })
-        </script>
-        
-
         <% else %>
         <li class="nav-item">
           <%= link_to 'Sign In' , new_user_session_path, class:"nav-link"%>
