@@ -1,9 +1,9 @@
 <%= week_calendar do |date| %>
-<%if Date.current.to_s <= date.to_s  %>
-  <%link_to calendar_path("#{day(date)}#{date}") do %>
-    <%= date %>
-  <%end %>
-<% else %>
-  <%= date %>
+  <%unless outdated? date  %>
+    <%link_to calendar_path("#{day(date)}#{date}") do %>
+      <%= date %>
+    <%end %>
+  <% else %>
+    <span class="outdated">Not Available</span>
   <%end%>
 <% end %>

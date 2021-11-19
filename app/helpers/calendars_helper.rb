@@ -7,6 +7,10 @@ module CalendarsHelper
     Calendar.find_by('date = ? AND start_time = ?', date, start_time)
   end
 
+  def outdated?(date)
+    Date.current.to_s >= date.to_s
+  end
+
   def full_day
     %w[Monday Thuesday Wednesday Thursday Friday Saturday Sunday]
   end

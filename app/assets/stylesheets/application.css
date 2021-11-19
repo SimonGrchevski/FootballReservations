@@ -18,6 +18,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+table,
+tr,
+th,
+td {
+  border: none !important;
+}
+
+td a {
+  color: #16db65;
+}
+
 .profiler-results {
   display: none;
 }
@@ -57,7 +68,7 @@
 }
 
 .reserveWrapper {
-  background-color: rgba(128, 255, 0, 0.466);
+  background-color: #000f08a4;
   padding: 1rem;
   box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0.548);
 }
@@ -70,5 +81,15 @@
 
 .options option {
   background-color: rgba(0, 0, 0, 0.603);
+  font-size: 1.3rem;
+}
+
+.outdated {
+  color: crimson;
+}
+
+.changeWeek,
+.week {
+  color: white;
   font-size: 1.3rem;
 }

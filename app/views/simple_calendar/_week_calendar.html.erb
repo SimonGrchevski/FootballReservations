@@ -1,13 +1,13 @@
 <div class='v-align-center d-flex'>
   <div class="simple-calendar w-50 margin-0-auto reserveWrapper">
-    <div class="calendar-heading d-flex justify-content-center w-100">
-      <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view %>
+    <div class="calendar-heading d-flex justify-content-center w-100 p-3">
+      <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view , class:'changeWeek'%>
       <% if calendar.number_of_weeks == 1 %>
-        <span class="calendar-title px-5"><%= t('simple_calendar.week', default: 'Week') %></span>
+        <span class="px-5 week"><%= t('simple_calendar.week', default: 'Week') %></span>
       <% else %>
-        <span class="calendar-title"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %> - <%= calendar.end_week %></span>
+        <span class="week"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %> - <%= calendar.end_week %></span>
       <% end %>
-      <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view %>
+      <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view,class:'changeWeek' %>
     </div>
 
     <table class="table table-striped row justify-content-center text-center">
