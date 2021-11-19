@@ -12,13 +12,9 @@
   </head>
 
   <body>
-    <% if notice || alert %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <% end %>
-    <br>
-    <br>
-    <%= render 'layouts/header' %>
-    <%= yield %>
+    <main class="wrapper">
+      <%= render 'layouts/header' %>
+      <%= yield%>
+    </main>
   </body>
 </html>

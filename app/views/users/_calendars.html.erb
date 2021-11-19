@@ -1,0 +1,13 @@
+<section class="d-flex flex-wrap justify-content-center">
+<% @calendars.each do |c| %>
+  <section class="card text-center m-2" style="width: 18rem;" >
+    <div class="card-img-top" >
+      <p> <%= c.day %> <%= c.date%></p>
+    </div>
+    <div class="card-body">
+     <p class="card-text">Start: <%= c.start_time %></p><p class="">End:<%= c.end_time %></p>
+    </div>
+    <div> <%= link_to 'Cancel reservation', reservation_path(c.reservation.id),class:'btn btn-primary', method: :delete%> </div>
+  </section>
+<% end %>
+</section>

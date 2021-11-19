@@ -1,37 +1,39 @@
-<div class="simple-calendar">
-  <div class="calendar-heading d-flex justify-content-center">
-    <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view %>
-    <% if calendar.number_of_weeks == 1 %>
-      <span class="calendar-title px-5"><%= t('simple_calendar.week', default: 'Week') %></span>
-    <% else %>
-      <span class="calendar-title"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %> - <%= calendar.end_week %></span>
-    <% end %>
-    <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view %>
-  </div>
+<div class='v-align-center d-flex'>
+  <div class="simple-calendar w-50 margin-0-auto reserveWrapper">
+    <div class="calendar-heading d-flex justify-content-center w-100">
+      <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view %>
+      <% if calendar.number_of_weeks == 1 %>
+        <span class="calendar-title px-5"><%= t('simple_calendar.week', default: 'Week') %></span>
+      <% else %>
+        <span class="calendar-title"><%= t('simple_calendar.week', default: 'Week') %> <%= calendar.week_number %> - <%= calendar.end_week %></span>
+      <% end %>
+      <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view %>
+    </div>
 
-  <table class="table table-striped row justify-content-center">
-    <thead class="col-2">
-      <tr class="row">
-        <% full_day.each do |day| %>
-          <th class="col-12"><%= day %></th>
-        <% end %>
-      </tr>
-    </thead>
-
-    <tbody class="col-2">
-      <% date_range.each_slice(7) do |week| %>
-        <tr class="row h-100">
-          <% week.each do |day| %>
-            <%= content_tag :td, class:'col-12' do %>
-              <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
-                <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
-              <% else %>
-                <% passed_block.call day, sorted_events.fetch(day, []) %>
-              <% end %>
-            <% end %>
+    <table class="table table-striped row justify-content-center text-center">
+      <thead class="col-5">
+        <tr class="row">
+          <% full_day.each do |day| %>
+            <th class="col-12"><%= day %></th>
           <% end %>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody class="col-5">
+        <% date_range.each_slice(7) do |week| %>
+          <tr class="row h-100">
+            <% week.each do |day| %>
+              <%= content_tag :td, class:'col-12' do %>
+                <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
+                  <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
+                <% else %>
+                  <% passed_block.call day, sorted_events.fetch(day, []) %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

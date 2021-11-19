@@ -18,4 +18,8 @@ module CalendarsHelper
   def to_h(time)
     time.strftime("%H:%M")
   end
+
+  def can_reserve?(start_time,current_date)
+    !(Time.new.hour.to_s >= start_time[0..1] && Date.today.to_formatted_s(:db) >= current_date)
+  end
 end

@@ -1,8 +1,60 @@
-<nav>
-  <%if user_signed_in? %>
-    <%= link_to 'Log out', destroy_user_session_path, method: :delete%>
-    <%= link_to 'My account', current_user %>
-  <% else %>
-    <%= link_to 'Sign In' , new_user_session_path%>
-  <% end %>
+<nav class="navbar navbar-expand-lg nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav w-50">
+        <%if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'My account', current_user, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Reserve', :root, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Log out', destroy_user_session_path, class:"nav-link" , method: :delete%>
+        </li>
+
+         <li class="nav-item d-flex">
+          <select name="career" id="career" class="options" onchange="location = this.value;" method="GET">
+            <option value="" selected hidden>Options</option>
+            <option value="<%=edit_name_user_path(current_user)%>">Edit name</option>
+            <option value="<%=edit_password_user_path(current_user)%>">Edit password</option>
+            <option value="<%=edit_email_user_path(current_user)%>">Edit email</option>
+        </select>
+        </li>
+        
+
+        
+
+
+        <script>
+              document.querySelector(".FU").addEventListener('click', () => {
+                console.log("Works");
+              })
+        </script>
+        
+
+        <% else %>
+        <li class="nav-item">
+          <%= link_to 'Sign In' , new_user_session_path, class:"nav-link"%>
+        </li>
+ 
+      <% end %>
+        
+      </ul>
+
+      <div class="w-50 d-flex align-content:center">
+        <% if notice %>
+          <p class="alert border-none p-0 m-0"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert"><%= alert %></p>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
 </nav>
