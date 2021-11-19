@@ -1,0 +1,27 @@
+<h1 class="text-center"><%= "#{@day} #{@date}" %></h1>
+<% while @open <= @close do %>
+  <%@start_time = @open %>
+  <%@end_time = @open+3600 %>
+  <%@open_to_h =  to_h(@open)%>
+  
+  <div class="d-flex w-30 bg-danger flex-wrap p-1 my-2">
+    <div class="w-50 text-center"><%="#{@start_time}-#{@end_time}"%></div>
+    <% if not_reserved? @date, @open_to_h%>
+      <%= render 'reserve_form',
+      date: @date, day: @day, start_time: @open_to_h,
+      end_time: to_h(@end_time) %>
+    <% else %>
+      <%@calendar = find @date,@open_to_h%>
+      <% if can? :delete, Calendar, user:current_user %>
+          <div class="w-50">
+            <%= link_to 'Cancel reservation', reservation_path(@calendar.reservation.id),class:'btn btn-primary', method: :delete%>
+          </div>
+        <% end %>
+      <div>   
+        <%= @calendar.user.email %>
+      </div>
+    <% end %>
+  </div>
+    <%@open+= 3600%>
+<% end %>
+

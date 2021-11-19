@@ -1,0 +1,4 @@
+<h1>USERS SHOW</h1>
+<% @reservations.each do |r| %>
+  <p> <%= r.day %> <%= r.date%> <%= r.start_time %>-<%= r.end_time %> </p>
+<% end %>

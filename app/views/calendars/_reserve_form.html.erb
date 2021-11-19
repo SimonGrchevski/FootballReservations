@@ -1,0 +1,9 @@
+<%if user_signed_in? %>
+  <%= form_with url: calendars_path do |f| %>
+    <%= f.hidden_field  :date, value: date %>
+    <%= f.hidden_field  :day, value: day %>
+    <%= f.hidden_field  :start_time, value: start_time%>
+    <%= f.hidden_field  :end_time, value: end_time%>
+    <%= f.submit "Reserve" %>
+  <% end %>
+<% end %>
