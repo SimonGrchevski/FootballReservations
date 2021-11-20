@@ -43,11 +43,12 @@ td a {
 }
 
 .wrapper::before {
+  display: block;
   content: '';
   position: absolute;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.603);
   pointer-events: none;
 }
@@ -92,4 +93,36 @@ td a {
 .week {
   color: white;
   font-size: 1.3rem;
+}
+
+.reservedCardWrapper {
+  flex-direction: column;
+  align-items: center;
+}
+
+.reservedCard {
+  position: relative;
+  z-index: 20;
+  box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0.548);
+  padding: 2rem;
+  border-radius: 5%;
+  font-weight: bold;
+}
+
+.reservedCard::after {
+  content: "";
+  background: url('champ.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.cancelReservation {
+  background: #a41622dc !important;
 }
