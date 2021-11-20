@@ -126,3 +126,11 @@ td a {
 .cancelReservation {
   background: #a41622dc !important;
 }
+
+.reserveButton {
+  width: 100% !important;
+  border: none;
+  outline: none;
+  padding: 0.3rem;
+  background: green;
+}

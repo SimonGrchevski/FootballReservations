@@ -5,7 +5,7 @@
     <%= f.hidden_field  :start_time, value: start_time%>
     <%= f.hidden_field  :end_time, value: end_time%>
     <% if can_reserve?(start_time, date) %>
-      <%= f.submit "Reserve" %>
+      <%= f.submit "Reserve", class:'reserveButton'%>
     <% end %>
   <% end %>
 <% end %>
