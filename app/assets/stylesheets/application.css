@@ -57,9 +57,9 @@
 }
 
 .reserveWrapper {
-  background-color: rgba(128, 255, 0, 0.466);
+  background-color: rgba(128, 255, 0, 0.464);
   padding: 1rem;
-  box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0.548);
+  box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0.547);
 }
 
 .options {
