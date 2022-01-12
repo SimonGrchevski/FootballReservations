@@ -18,6 +18,8 @@ class CalendarsController < ApplicationController
     end
   end
 
+  private
+
   def calendar_params
     params.permit(:date, :start_time, :end_time, :day)
   end
