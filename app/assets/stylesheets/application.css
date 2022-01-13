@@ -42,7 +42,7 @@
 }
 
 .nav {
-  background-color: rgba(240, 248, 255, 0.192);
+  background-color: rgba(240, 248, 255, 0.193);
   height: 5rem;
 }
 
@@ -57,9 +57,9 @@
 }
 
 .reserveWrapper {
-  background-color: rgba(128, 255, 0, 0.464);
+  background-color: rgba(128, 255, 0, 0.465);
   padding: 1rem;
-  box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0.547);
+  box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0.546);
 }
 
 .options {
