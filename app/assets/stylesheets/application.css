@@ -37,12 +37,12 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.601);
+  background-color: rgba(0, 0, 0, 0.600);
   pointer-events: none;
 }
 
 .nav {
-  background-color: rgba(240, 248, 255, 0.195);
+  background-color: rgba(240, 248, 255, 0.194);
   height: 5rem;
 }
 
@@ -57,9 +57,9 @@
 }
 
 .reserveWrapper {
-  background-color: rgba(128, 255, 0, 0.464);
+  background-color: rgba(128, 255, 0, 0.463);
   padding: 1rem;
-  box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0.545);
+  box-shadow: 3px 3px 6px 3px rgba(0, 0, 0, 0.544);
 }
 
 .options {
